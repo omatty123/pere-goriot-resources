@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Père Goriot Screenplay Resources</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --bg-card: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #666666;
+            --accent: #2563eb;
+            --accent-light: #dbeafe;
+            --border: #e5e5e5;
+            --category-tools: #7c3aed;
+            --category-learn: #059669;
+            --category-korea: #dc2626;
+            --category-collab: #d97706;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-desc {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        /* Main */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .section-icon.tools { background: #f3e8ff; }
+        .section-icon.learn { background: #d1fae5; }
+        .section-icon.korea { background: #fee2e2; }
+        .section-icon.collab { background: #fef3c7; }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+
+        .tag-free { background: #d1fae5; color: #065f46; }
+        .tag-paid { background: #fee2e2; color: #991b1b; }
+        .tag-freemium { background: #dbeafe; color: #1e40af; }
+        .tag-course { background: #fef3c7; color: #92400e; }
+        .tag-essential { background: #f3e8ff; color: #6b21a8; }
+
+        .card p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Special Callout */
+        .callout {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .callout h2 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .callout p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .callout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .callout-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .callout-item strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .callout-item span {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="header-subtitle">Père Goriot → Korean Screenplay</p>
+        <h1>Screenplay Development Resources</h1>
+        <p class="header-desc">Curated tools, courses, and industry resources for adapting Balzac's masterpiece to Korean cinema.</p>
+    </header>
+
+    <nav>
+        <a href="#tools">AI Tools</a>
+        <a href="#learning">Learning</a>
+        <a href="#korean">Korean Industry</a>
+        <a href="#collaboration">Collaboration</a>
+        <a href="#reference">Reference</a>
+    </nav>
+
+    <main>
+        <div class="callout">
+            <h2>Korean Narrative Structure: Kishōtenketsu (기승전결)</h2>
+            <p>Unlike Western 3-act conflict-driven structure, Korean storytelling uses a 4-act format where tension comes from contrast rather than conflict. Essential for authentic Korean adaptation.</p>
+            <div class="callout-grid">
+                <div class="callout-item">
+                    <strong>기 (Ki) — Introduction</strong>
+                    <span>Establish Siwoo arriving in Seoul, the gosiwon world</span>
+                </div>
+                <div class="callout-item">
+                    <strong>승 (Seung) — Development</strong>
+                    <span>Deepen relationships, emotional investment</span>
+                </div>
+                <div class="callout-item">
+                    <strong>전 (Jeon) — Twist</strong>
+                    <span>The funeral revelation transforms understanding</span>
+                </div>
+                <div class="callout-item">
+                    <strong>결 (Gyeol) — Conclusion</strong>
+                    <span>Siwoo's choice on Namsan Tower</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="tools">
+            <div class="section-header">
+                <div class="section-icon tools">🤖</div>
+                <h2>AI Screenplay Tools</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Sudowrite</h3>
+                        <span class="card-tag tag-paid">Paid</span>
+                    </div>
+                    <p>AI with "Story Bible" for organizing complex character relationships. Ideal for tracking Balzac's intricate web of characters like Go, Siwoo, Cheol-min, and the daughters.</p>
+                    <a href="https://sudowrite.com/" class="card-link" target="_blank">Visit Sudowrite →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>NolanAI</h3>
+                        <span class="card-tag tag-free">Free</span>
+                    </div>
+                    <p>Free AI script writing with full IP rights retained. Covers concept through production planning. Strong data privacy. Great for early drafts.</p>
+                    <a href="https://www.nolanai.app/" class="card-link" target="_blank">Visit NolanAI →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>WriterSolo</h3>
+                        <span class="card-tag tag-freemium">Freemium</span>
+                    </div>
+                    <p>Free version of WriterDuet. Opens/saves industry standard .fdx files. Scene navigator with color coding. Professional output at low cost.</p>
+                    <a href="https://writersolo.com/" class="card-link" target="_blank">Visit WriterSolo →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>LTX Studio</h3>
+                        <span class="card-tag tag-free">Free</span>
+                    </div>
+                    <p>AI pitch deck generator with storyboards, mood boards, and synopses. Useful for visualizing scenes before writing.</p>
+                    <a href="https://ltx.studio/platform/pitch-deck-generator" class="card-link" target="_blank">Visit LTX Studio →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="learning">
+            <div class="section-header">
+                <div class="section-icon learn">📚</div>
+                <h2>Adaptation Education</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>MasterClass: Aaron Sorkin</h3>
+                        <span class="card-tag tag-course">Course</span>
+                    </div>
+                    <p>35 video lessons on dialogue and character-driven drama. Sorkin's expertise aligns with Balzac's theatrical style. Writers' room format prepares for Korean collaborative environments.</p>
+                    <a href="https://www.masterclass.com/classes/aaron-sorkin-teaches-screenwriting" class="card-link" target="_blank">View Course →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Writing Academy: Adapting Novel to Screenplay</h3>
+                        <span class="card-tag tag-course">Course</span>
+                    </div>
+                    <p>Dedicated course on literary adaptation using actual projects with complete novel, first and final screenplay drafts. Shows what was changed and why.</p>
+                    <a href="https://writingacademy.com/p/adapting-novel-to-screenplay" class="card-link" target="_blank">View Course →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Writer's Digest: Novel to Screenplay</h3>
+                        <span class="card-tag tag-free">Free Guide</span>
+                    </div>
+                    <p>Industry-standard advice on adaptation. Three-act structure, character condensation, "show don't tell" principles.</p>
+                    <a href="https://www.writersdigest.com/resources/how-to-adapt-a-novel-into-a-screenplay" class="card-link" target="_blank">Read Guide →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Screenplay How To: Parasite Analysis</h3>
+                        <span class="card-tag tag-essential">Essential</span>
+                    </div>
+                    <p>Detailed breakdown of Parasite's screenplay structure. Essential reference for understanding Korean prestige cinema storytelling.</p>
+                    <a href="https://screenplayhowto.com/screenplay-analysis/parasite-2019-analysis/" class="card-link" target="_blank">Read Analysis →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="korean">
+            <div class="section-header">
+                <div class="section-icon korea">🇰🇷</div>
+                <h2>Korean Film Industry</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>KOFIC (Korean Film Council)</h3>
+                        <span class="card-tag tag-essential">Essential</span>
+                    </div>
+                    <p>State-supported organization with screenplay market, contests with prizes up to 50M won, and co-production development support for international projects.</p>
+                    <a href="https://www.koreanfilm.or.kr/eng/kofic/intro.jsp" class="card-link" target="_blank">Visit KOFIC →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Seoul Film Commission</h3>
+                        <span class="card-tag tag-essential">Essential</span>
+                    </div>
+                    <p>Programs for overseas directors/writers developing projects set in Seoul. Accepts treatments in Korean or English. Direct development support.</p>
+                    <a href="http://english.seoulfc.or.kr/ict/ssds/" class="card-link" target="_blank">Visit Commission →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>KOFIC Screenplay Market</h3>
+                        <span class="card-tag tag-free">Free</span>
+                    </div>
+                    <p>Official screenplay marketplace connecting writers with Korean producers. Submit completed screenplays for industry review.</p>
+                    <a href="http://www.scenariomarket.or.kr" class="card-link" target="_blank">Visit Market →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Kishōtenketsu Guide</h3>
+                        <span class="card-tag tag-free">Free</span>
+                    </div>
+                    <p>Comprehensive guide to the 4-act Korean/East Asian narrative structure. Critical for authentic adaptation.</p>
+                    <a href="https://en.wikipedia.org/wiki/Kish%C5%8Dtenketsu" class="card-link" target="_blank">Read Guide →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Korean Screenwriter Industry</h3>
+                        <span class="card-tag tag-free">Free</span>
+                    </div>
+                    <p>Facts & Details on Korean production dynamics, writer-PD relationships, compensation structures, workflow expectations.</p>
+                    <a href="https://factsanddetails.com/korea/South_Korea/K-Dramas_Television_and_Film/entry-7295.html" class="card-link" target="_blank">Read Article →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Screen Daily: Korean Market</h3>
+                        <span class="card-tag tag-essential">Market Intel</span>
+                    </div>
+                    <p>Current state of Korean film industry. Critical context: mid-budget co-productions are the sweet spot in 2025-2026.</p>
+                    <a href="https://www.screendaily.com/features/the-ecosystem-of-the-industry-is-collapsing-can-koreas-crisis-hit-film-sector-recover/5209076.article" class="card-link" target="_blank">Read Report →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="collaboration">
+            <div class="section-header">
+                <div class="section-icon collab">🤝</div>
+                <h2>Collaboration Tools</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>WriterDuet</h3>
+                        <span class="card-tag tag-freemium">Freemium</span>
+                    </div>
+                    <p>Cloud-based real-time collaboration like Google Docs for screenwriters. In-app chat, version history. Bridges time zone differences with Korean collaborators.</p>
+                    <a href="https://www.writerduet.com/" class="card-link" target="_blank">Visit WriterDuet →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Arc Studio Pro</h3>
+                        <span class="card-tag tag-freemium">Freemium</span>
+                    </div>
+                    <p>Real-time collaboration with deadline tracking and writer's room management. If adapting as K-drama series, the seasonal management is essential.</p>
+                    <a href="https://www.arcstudiopro.com/" class="card-link" target="_blank">Visit Arc Studio →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Final Draft</h3>
+                        <span class="card-tag tag-paid">Industry Standard</span>
+                    </div>
+                    <p>Industry standard format. Korean production companies familiar with international standards expect Final Draft compatibility.</p>
+                    <a href="https://www.finaldraft.com/" class="card-link" target="_blank">Visit Final Draft →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>StudioBinder</h3>
+                        <span class="card-tag tag-freemium">Freemium</span>
+                    </div>
+                    <p>Pre-production platform with script breakdown, scheduling, shot lists. Demonstrates professional workflow to Korean directors.</p>
+                    <a href="https://www.studiobinder.com/" class="card-link" target="_blank">Visit StudioBinder →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="reference">
+            <div class="section-header">
+                <div class="section-icon tools">📖</div>
+                <h2>Père Goriot Reference</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>LitCharts: Père Goriot Themes</h3>
+                        <span class="card-tag tag-essential">Essential</span>
+                    </div>
+                    <p>Detailed thematic analysis: Paris, ambition, money, class. Character relationships mapped. Essential for preserving Balzac's core themes.</p>
+                    <a href="https://www.litcharts.com/lit/pere-goriot/themes" class="card-link" target="_blank">View Analysis →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>1945 Film Adaptation</h3>
+                        <span class="card-tag tag-free">Reference</span>
+                    </div>
+                    <p>Analysis of the successful 1945 French film adaptation. Charles Spaak's "sublime screenplay" choices can inform our Korean version.</p>
+                    <a href="http://www.frenchfilms.org/review/le-pere-goriot-1945.html" class="card-link" target="_blank">Read Review →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>SuperSummary</h3>
+                        <span class="card-tag tag-free">Free</span>
+                    </div>
+                    <p>Comprehensive study guide with symbols and motifs analysis. Scene-by-scene breakdown for adaptation planning.</p>
+                    <a href="https://www.supersummary.com/le-pere-goriot/summary/" class="card-link" target="_blank">View Summary →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Untold Scandal Case Study</h3>
+                        <span class="card-tag tag-essential">Essential</span>
+                    </div>
+                    <p>How E J-yong adapted Les Liaisons dangereuses for Joseon Korea. 5 years of cultural translation research. Our key precedent.</p>
+                    <a href="https://en.wikipedia.org/wiki/Untold_Scandal" class="card-link" target="_blank">Read Case Study →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Père Goriot Korean Adaptation Project · Resources compiled January 2026</p>
+    </footer>
+</body>
+</html>
